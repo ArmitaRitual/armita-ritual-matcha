@@ -1,174 +1,227 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Armita Ritual</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Armita Ritual | Ceremonial Matcha</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
-    background:#f8f5ee;
-    color:#1f1f1f;
-    font-family:'Inter',sans-serif;
+font-family:'Inter',sans-serif;
+background:#f8f6f1;
+color:#1b1b1b;
+overflow-x:hidden;
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:28px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(248,246,241,.92);
+backdrop-filter:blur(12px);
+z-index:999;
+border-bottom:1px solid rgba(0,0,0,.05);
+}
+
+.logo{
+font-family:'Cormorant Garamond',serif;
+font-size:2rem;
+font-weight:700;
+letter-spacing:1px;
+}
+
+.nav-links{
+display:flex;
+gap:35px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#1b1b1b;
+font-size:.95rem;
+font-weight:500;
 }
 
 .hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:40px;
-    background:
-    linear-gradient(rgba(248,245,238,0.65),rgba(248,245,238,0.65)),
-    url('https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?auto=format&fit=crop&w=1800&q=80');
-    background-size:cover;
-    background-position:center;
+height:100vh;
+background:
+linear-gradient(rgba(248,246,241,.35),rgba(248,246,241,.35)),
+url('https://images.unsplash.com/photo-1545671913-b89ac1b4ac10?auto=format&fit=crop&w=2400&q=80');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 20px;
 }
 
 .hero-content{
-    max-width:850px;
-}
-
-.brand{
-    font-family:'Cormorant Garamond',serif;
-    font-size:5rem;
-    font-weight:700;
-    letter-spacing:2px;
-    margin-bottom:15px;
+max-width:900px;
 }
 
 .tagline{
-    font-size:1.1rem;
-    text-transform:uppercase;
-    letter-spacing:4px;
-    color:#4d6b45;
-    margin-bottom:30px;
+letter-spacing:5px;
+text-transform:uppercase;
+font-size:.8rem;
+color:#56704d;
+margin-bottom:20px;
 }
 
-.hero h2{
-    font-family:'Cormorant Garamond',serif;
-    font-size:3rem;
-    font-weight:500;
-    margin-bottom:25px;
+.hero h1{
+font-family:'Cormorant Garamond',serif;
+font-size:7rem;
+font-weight:600;
+line-height:.95;
+margin-bottom:30px;
 }
 
 .hero p{
-    font-size:1.1rem;
-    line-height:1.9;
-    max-width:700px;
-    margin:auto;
-    margin-bottom:40px;
+max-width:700px;
+margin:auto;
+line-height:2;
+font-size:1.15rem;
+margin-bottom:40px;
 }
 
-.button{
-    display:inline-block;
-    padding:16px 36px;
-    background:#4d6b45;
-    color:white;
-    text-decoration:none;
-    border-radius:50px;
-    font-weight:500;
-    transition:0.3s;
+.btn{
+display:inline-block;
+padding:18px 42px;
+background:#4f6847;
+color:white;
+text-decoration:none;
+border-radius:999px;
+font-weight:500;
+transition:.3s;
 }
 
-.button:hover{
-    transform:translateY(-2px);
+.btn:hover{
+transform:translateY(-2px);
 }
 
 .section{
-    padding:100px 10%;
+padding:120px 10%;
 }
 
 .section-title{
-    text-align:center;
-    font-family:'Cormorant Garamond',serif;
-    font-size:3rem;
-    margin-bottom:25px;
+font-family:'Cormorant Garamond',serif;
+font-size:4rem;
+text-align:center;
+margin-bottom:25px;
 }
 
-.description{
-    max-width:850px;
-    margin:auto;
-    text-align:center;
-    line-height:2;
-    color:#444;
+.section-description{
+max-width:850px;
+margin:auto;
+text-align:center;
+line-height:2;
+color:#555;
 }
 
-.features{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-    margin-top:60px;
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:70px;
 }
 
 .card{
-    background:white;
-    padding:35px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+background:white;
+padding:40px;
+border-radius:24px;
+box-shadow:0 12px 40px rgba(0,0,0,.06);
 }
 
 .card h3{
-    margin-bottom:15px;
-    font-family:'Cormorant Garamond',serif;
-    font-size:2rem;
+font-family:'Cormorant Garamond',serif;
+font-size:2rem;
+margin-bottom:15px;
 }
 
 .card p{
-    line-height:1.8;
+line-height:1.9;
+color:#555;
 }
 
-.footer{
-    text-align:center;
-    padding:60px 20px;
-    background:#1f1f1f;
-    color:white;
+@media(max-width:900px){
+
+.hero h1{
+font-size:4rem;
 }
 
-@media(max-width:768px){
-
-.brand{
-    font-size:3.5rem;
+.nav-links{
+display:none;
 }
 
-.hero h2{
-    font-size:2.2rem;
+.section-title{
+font-size:2.8rem;
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
+
+<nav>
+
+<div class="logo">
+Armita Ritual
+</div>
+
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#">Our Matcha</a>
+<a href="#">Ritual</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</div>
+
+</nav>
 
 <section class="hero">
 
 <div class="hero-content">
 
-<div class="brand">Armita Ritual</div>
+<div class="tagline">
+Japanese Ceremonial Matcha
+</div>
 
-<div class="tagline">Ceremonial Grade Matcha</div>
-
-<h2>The Art of Japanese Matcha</h2>
+<h1>
+Armita<br>
+Ritual
+</h1>
 
 <p>
-Discover exceptional ceremonial-grade matcha sourced from Japan's most celebrated tea-growing regions.
-Crafted from carefully shade-grown tea leaves and stone-ground into a vibrant green powder,
-Armita Ritual offers a smooth, naturally sweet, and deeply satisfying matcha experience.
+Experience exceptional ceremonial-grade matcha sourced from Japan's most celebrated tea-growing regions. Vibrant, smooth, naturally sweet, and crafted for moments of clarity, focus, and ritual.
 </p>
 
-<a href="#" class="button">Launching Soon</a>
+<a href="#" class="btn">
+Discover The Collection
+</a>
 
 </div>
 
@@ -176,38 +229,37 @@ Armita Ritual offers a smooth, naturally sweet, and deeply satisfying matcha exp
 
 <section class="section">
 
-<h2 class="section-title">Our Philosophy</h2>
+<h2 class="section-title">
+The Finest Matcha Experience
+</h2>
 
-<p class="description">
-At Armita Ritual, we believe matcha should be more than a drink—it should be a ritual.
-We seek out high-quality Japanese matcha known for its vibrant colour, silky texture,
-and naturally balanced flavour. Every cup is designed to bring a moment of calm,
-focus, and intentional living to your day.
+<p class="section-description">
+Our ceremonial matcha is selected for exceptional colour, sweetness, and balance. Shade-grown, carefully harvested, and traditionally stone-ground, every cup reflects centuries of Japanese tea craftsmanship.
 </p>
 
-<div class="features">
+<div class="cards">
 
 <div class="card">
 <h3>Japanese Origin</h3>
+
 <p>
-Sourced from renowned tea-growing regions in Japan where generations of craftsmanship
-have perfected the cultivation of premium matcha.
+Selected from renowned tea-growing regions celebrated for producing some of the world's most respected ceremonial matcha.
 </p>
 </div>
 
 <div class="card">
 <h3>Stone Ground</h3>
+
 <p>
-Traditional stone grinding preserves the delicate aroma, colour, and flavour that
-define authentic ceremonial-grade matcha.
+Traditional stone milling preserves flavour, aroma, texture, and the vibrant green colour characteristic of premium matcha.
 </p>
 </div>
 
 <div class="card">
-<h3>Pure & Vibrant</h3>
+<h3>Rich Umami</h3>
+
 <p>
-Bright green, naturally sweet, and exceptionally smooth—crafted for daily rituals
-and elevated moments alike.
+Smooth, naturally sweet, and remarkably balanced without the bitterness often found in lower grades.
 </p>
 </div>
 
@@ -215,13 +267,152 @@ and elevated moments alike.
 
 </section>
 
-<footer class="footer">
+<section class="section">
 
-<h2 style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;margin-bottom:15px;">
+<div style="
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:80px;
+align-items:center;
+">
+
+<img
+src="https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?auto=format&fit=crop&w=1400&q=80"
+style="
+width:100%;
+border-radius:30px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+">
+
+<div>
+
+<h2 style="
+font-family:'Cormorant Garamond',serif;
+font-size:4rem;
+margin-bottom:25px;
+">
+Rooted In Tradition
+</h2>
+
+<p style="
+line-height:2;
+color:#555;
+font-size:1.05rem;
+">
+For centuries, Japanese tea masters have refined the cultivation and preparation of ceremonial matcha. At Armita Ritual, we honour that tradition through carefully selected matcha crafted to elevate everyday moments into meaningful rituals.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" style="background:white;">
+
+<h2 class="section-title">
+Why Matcha
+</h2>
+
+<p class="section-description">
+Unlike coffee, matcha provides a calm and sustained source of energy. Rich in antioxidants and naturally containing L-theanine, ceremonial matcha supports focus, clarity, and balance throughout the day.
+</p>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Focused Energy</h3>
+
+<p>
+A balanced lift without the sharp spike and crash often associated with traditional coffee.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Antioxidant Rich</h3>
+
+<p>
+Matcha contains naturally occurring compounds prized for their antioxidant content and vibrant green colour.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Daily Ritual</h3>
+
+<p>
+Transform an ordinary moment into a mindful practice that encourages presence and intention.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section style="
+padding:140px 10%;
+text-align:center;
+background:#eef1e7;
+">
+
+<h2 style="
+font-family:'Cormorant Garamond',serif;
+font-size:4rem;
+margin-bottom:25px;
+">
+Crafted For Ritual
+</h2>
+
+<p style="
+max-width:750px;
+margin:auto;
+line-height:2;
+font-size:1.05rem;
+color:#555;
+margin-bottom:40px;
+">
+Every detail of Armita Ritual is designed to celebrate the beauty of slowing down. From sourcing exceptional ceremonial matcha to creating a refined experience, our mission is simple: bring elegance, focus, and intention to your daily routine.
+</p>
+
+<a href="#" class="btn">
+Explore Matcha
+</a>
+
+</section>
+
+<footer style="
+background:#182018;
+color:white;
+text-align:center;
+padding:100px 10%;
+">
+
+<h2 style="
+font-family:'Cormorant Garamond',serif;
+font-size:3rem;
+margin-bottom:15px;
+">
 Armita Ritual
 </h2>
 
-<p>Premium ceremonial-grade matcha from Japan.</p>
+<p style="
+opacity:.8;
+margin-bottom:25px;
+">
+Premium ceremonial matcha from Japan.
+</p>
+
+<p style="
+opacity:.6;
+font-size:.9rem;
+">
+© 2026 Armita Ritual. All rights reserved.
+</p>
 
 </footer>
 
